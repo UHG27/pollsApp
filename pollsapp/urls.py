@@ -21,7 +21,7 @@ from django.urls import path, include
 
 
 def hello(request):
-    return HttpResponse('<h1>Hello Engineers<h1/>')
+    return HttpResponse('Hello Engineers')
 
 def multiply(request, num):
     html = ''
