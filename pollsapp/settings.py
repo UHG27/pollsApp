@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # Local apps
     'poll.apps.PollConfig',
     #django Apps
+    'chart.js',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
