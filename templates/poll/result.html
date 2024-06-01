@@ -10,8 +10,32 @@
 
     {% endfor %}
 
-
 </ul>
+<div>
+    <canvas id="myChart"></canvas>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart');
+    const labels = {{ choice_text|escapejs }};
+    new Chart(ctx, {
+      type: 'columns',
+      datasets: [{
+        labels: JSON.parse(labels),
+          label: '# of Votes',
+          data: JSON.parse('{{ votes|escapejs }}'),
+          borderWidth: 1
+        }]
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+   
 <hr>
 <a href="{% url 'poll:home' %}">Encuestas</a>
 {% endblock %}
